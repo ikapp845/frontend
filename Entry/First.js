@@ -17,6 +17,19 @@ export default function First({ navigation }) {
         <Google></Google>
         <Text style={styles.googletext}>Continue with Google</Text>
       </TouchableOpacity>
+      <View>
+        <Text
+          style={{
+            textAlign: "center",
+            color: "white",
+            width: "90%",
+            marginTop: 15,
+          }}
+        >
+          By continuing you're agreeing to our Terms of Service and Privacy
+          Policy
+        </Text>
+      </View>
     </View>
   );
 }

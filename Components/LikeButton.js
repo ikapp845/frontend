@@ -1,9 +1,21 @@
 import { TouchableOpacity, StyleSheet } from "react-native";
 import Like from "../Icon/Like";
+import { useState } from "react";
+import LikePage from "../Likes/LikePage";
 
 export default function LikeButton() {
+  const [modalvisible, setModalvisible] = useState(false);
   return (
-    <TouchableOpacity style={styles.like}>
+    <TouchableOpacity
+      style={styles.like}
+      onPress={() => {
+        setModalvisible(true);
+      }}
+    >
+      <LikePage
+        modalvisible={modalvisible}
+        setModalvisible={setModalvisible}
+      ></LikePage>
       <Like></Like>
     </TouchableOpacity>
   );
