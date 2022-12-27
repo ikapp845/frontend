@@ -39,7 +39,16 @@ export default function LikePage(props) {
               Likes
             </Text>
           </View>
-          <Tab.Navigator>
+          <Tab.Navigator
+            screenOptions={{
+              tabBarLabelStyle: { fontSize: 16 },
+              tabBarActiveTintColor: "#a17cce",
+              tabBarInactiveTintColor: "#b1b1b1",
+              tabBarIndicatorStyle: {
+                backgroundColor: "#a17cce",
+              },
+            }}
+          >
             <Tab.Screen name="Me" component={Likes}></Tab.Screen>
             <Tab.Screen name="Friends" component={Friends}></Tab.Screen>
           </Tab.Navigator>
