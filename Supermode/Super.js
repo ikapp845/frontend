@@ -21,36 +21,50 @@ export default function Super(props) {
         props.setModalvisible(false);
       }}
     >
-      <View style={styles.super}>
-        <Text style={styles.main}>See who sent this</Text>
-        <View style={styles.second}>
-          <Text style={styles.secondtext}>with </Text>
-          <Image source={require("../Images/Crown.png")} />
-          <Text style={styles.secondtext}> Super mode</Text>
-        </View>
+      <View
+        style={{
+          width: "100%",
+          height: "100%",
+          backgroundColor: "rgba(0,0,0,0.5)",
+        }}
+      >
+        <View style={styles.super}>
+          <Text style={styles.main}>See who sent this</Text>
+          <View style={styles.second}>
+            <Text style={styles.secondtext}>with </Text>
+            <Image source={require("../Images/Crown.png")} />
+            <Text style={styles.secondtext}> Super mode</Text>
+          </View>
 
-        <View style={{ alignItems: "center" }}>
-          <Slide desc={SuperData[no].desc} img={SuperData[no].img}></Slide>
+          <View style={{ alignItems: "center" }}>
+            <Slide desc={SuperData[no].desc} img={SuperData[no].img}></Slide>
+          </View>
+          <View style={styles.slider}>
+            <View
+              style={[styles.sliderdot, { backgroundColor: "white" }]}
+            ></View>
+            <View
+              style={[styles.sliderdot, { backgroundColor: "white" }]}
+            ></View>
+            <View
+              style={[styles.sliderdot, { backgroundColor: "white" }]}
+            ></View>
+          </View>
+          <Text style={styles.price}>
+            {`\u20A8`}100
+            <Text style={{ color: "#818181", fontSize: 12 }}>/w</Text>
+          </Text>
+          <TouchableOpacity style={styles.continue}>
+            <Text style={styles.continuetext}>Continue</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              setModalvisible(false);
+            }}
+          >
+            <Text style={styles.later}>Maybe Later</Text>
+          </TouchableOpacity>
         </View>
-        <View style={styles.slider}>
-          <View style={[styles.sliderdot, { backgroundColor: "white" }]}></View>
-          <View style={[styles.sliderdot, { backgroundColor: "white" }]}></View>
-          <View style={[styles.sliderdot, { backgroundColor: "white" }]}></View>
-        </View>
-        <Text style={styles.price}>
-          {`\u20A8`}100
-          <Text style={{ color: "#818181", fontSize: 12 }}>/w</Text>
-        </Text>
-        <TouchableOpacity style={styles.continue}>
-          <Text style={styles.continuetext}>Continue</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => {
-            setModalvisible(false);
-          }}
-        >
-          <Text style={styles.later}>Maybe Later</Text>
-        </TouchableOpacity>
       </View>
     </Modal>
   );
