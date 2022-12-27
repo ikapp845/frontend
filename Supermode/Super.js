@@ -1,4 +1,11 @@
-import { Modal, StyleSheet, View, Text, Image } from "react-native";
+import {
+  Modal,
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import SuperData from "./SuperData";
 import Slide from "./Slide";
 import { useState } from "react";
@@ -34,10 +41,16 @@ export default function Super(props) {
           {`\u20A8`}100
           <Text style={{ color: "#818181", fontSize: 12 }}>/w</Text>
         </Text>
-        <View style={styles.continue}>
+        <TouchableOpacity style={styles.continue}>
           <Text style={styles.continuetext}>Continue</Text>
-        </View>
-        <Text>Maybe Later</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            setModalvisible(false);
+          }}
+        >
+          <Text style={styles.later}>Maybe Later</Text>
+        </TouchableOpacity>
       </View>
     </Modal>
   );
@@ -91,15 +104,23 @@ const styles = StyleSheet.create({
   },
   continue: {
     backgroundColor: "#ab6ce8",
-    width: "90%",
+    width: "88%",
     alignItems: "center",
-    marginLeft: "5%",
+    marginLeft: "6%",
     height: 60,
     justifyContent: "center",
+    borderRadius: 60,
+    marginTop: 10,
   },
   continuetext: {
     color: "white",
     fontSize: 18,
     fontWeight: "bold",
+  },
+  later: {
+    fontSize: 16,
+    textAlign: "center",
+    fontWeight: "bold",
+    marginTop: 10,
   },
 });
