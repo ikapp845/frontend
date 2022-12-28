@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 export default function Timer() {
   return (
@@ -17,8 +17,22 @@ export default function Timer() {
           New polls will be unlocked after an hour
         </Text>
       </View>
-      <Text style={{ fontSize: 16, color: "white" }}>---- OR ----</Text>
-      <Text style={{ fontSize: 16, color: "white" }}>Skip the weight by </Text>
+      <Text
+        style={{
+          fontSize: 16,
+          color: "white",
+          marginTop: 30,
+          marginBottom: 15,
+        }}
+      >
+        ---- OR ----
+      </Text>
+      <Text style={{ fontSize: 16, color: "white", marginBottom: 15 }}>
+        Skip the weight by{" "}
+      </Text>
+      <TouchableOpacity style={styles.invite}>
+        <Text style={styles.invitetext}>Invite friends</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -33,6 +47,7 @@ const styles = StyleSheet.create({
     width: "75%",
     borderRadius: 20,
     alignItems: "center",
+    marginTop: 30,
   },
   box: {
     width: 60,
@@ -61,4 +76,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 70,
   },
+  invite: {
+    backgroundColor: "white",
+    width: "75%",
+    height: 60,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 50,
+  },
+  invitetext: { fontSize: 16 },
 });
