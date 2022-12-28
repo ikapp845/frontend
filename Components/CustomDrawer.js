@@ -16,21 +16,34 @@ import Like from "../Icon/Like";
 import Plus from "../Icon/Plus";
 import { useState } from "react";
 import DownPopup from "../Components/DownPopup";
-
-function share() {}
-
-function leavegroup() {}
-
-function instagram() {}
-
-function help() {}
-
-function deleteaccount() {}
+import Popup from "../Components/Popup";
 
 export default function CustomDrawer(props) {
   const [modalvisiblegroup, setModalvisiblegroup] = useState(false);
   const [modalvisiblemain, setModalvisiblemain] = useState(false);
+  const [modalvisiblepop, setModalvisiblepop] = useState(false);
+  const [head, setHead] = useState("");
+  const [head2, setHead2] = useState("");
+  const [head3, setHead3] = useState("");
+  function share() {}
 
+  function leavegroup() {
+    setHead("Are you sure you want to leave the group?");
+    setHead2("You'll be removed from the group without notifying other user's");
+    setHead3("leave");
+    setModalvisiblepop(true);
+  }
+
+  function instagram() {}
+
+  function help() {}
+
+  function deleteaccount() {
+    setHead("Are you sure you want to delete your account?");
+    setHead2("You won't be able to recover your likes");
+    setHead3("Delete");
+    setModalvisiblepop(true);
+  }
   return (
     <View style={[BackgroundColour.back]}>
       <DownPopup
@@ -50,6 +63,13 @@ export default function CustomDrawer(props) {
         modalvisible={modalvisiblegroup}
         setModalvisible={setModalvisiblegroup}
       ></DownPopup>
+      <Popup
+        modalvisible={modalvisiblepop}
+        setModalvisible={setModalvisiblepop}
+        head={head}
+        head2={head2}
+        head3={head3}
+      ></Popup>
       <View style={styles.top}>
         <View style={styles.profilepic}>
           <View style={styles.camera}>

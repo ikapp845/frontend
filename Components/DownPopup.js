@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
     left: 0,
     alignItems: "center",
     justifyContent: "center",
+    paddingBottom: 20,
   },
   hole: {
     width: 36,
@@ -57,8 +58,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: "89%",
 
-    marginBottom: 4,
-    marginTop: 4,
+    marginBottom: 6,
+    marginTop: 6,
   },
   buttontext: {
     textAlign: "center",
