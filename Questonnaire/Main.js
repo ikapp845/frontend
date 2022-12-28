@@ -5,6 +5,7 @@ import ProfilePic from "../Components/ProfilePic";
 import Question from "./Question";
 import UsernameSearch from "../Components/UsernameSearch";
 import { useState } from "react";
+import Timer from "./Timer";
 
 export default function Main({ navigation }) {
   return (
@@ -19,8 +20,7 @@ export default function Main({ navigation }) {
         <Text style={styles.slidetext}>1 of 12</Text>
         <LikeButton></LikeButton>
       </View>
-      <Question></Question>
-      <UsernameSearch></UsernameSearch>
+      <Timer></Timer>
     </View>
   );
 }
