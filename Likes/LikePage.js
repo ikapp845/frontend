@@ -5,7 +5,7 @@ import Friends from "./Friends";
 import Likes from "./Likes";
 import LikeOpen from "./LikeOpen";
 import { useState } from "react";
-import ThisPerson from "../Supermode/ThisPerson";
+import Reveal from "../Supermode/Reveal";
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -21,14 +21,12 @@ export default function LikePage(props) {
       visible={props.modalvisible}
       animationType="slide"
     >
+      <Reveal modalvisible={activated} setModalvisible={setActivated}></Reveal>
       <LikeOpen
         modalvisible={modalvisible}
         setModalvisible={setModalvisible}
       ></LikeOpen>
-      <ThisPerson
-        modalvisible={activated}
-        setModalvisible={setActivated}
-      ></ThisPerson>
+
       <View style={styles.like}>
         <View style={styles.likeinside}>
           <View
