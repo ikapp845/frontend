@@ -12,7 +12,8 @@ import Yelloheart from "../Icon/Yellowheart";
 export default function Likes() {
   return (
     <ScrollView style={{ backgroundColor: "#ffffff", paddingTop: 15 }}>
-      <TouchableOpacity style={styles.like}>
+      <TouchableOpacity style={[styles.like, { backgroundColor: "white" }]}>
+        {/* background color:"#f0f0f2" for viewed ones*/}
         <Pinkheart></Pinkheart>
         <Text
           style={{
@@ -49,7 +50,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     elevation: 3,
-    backgroundColor: "white",
     shadowColor: "black",
     shadowOpacity: 0.2,
     shadowOffset: { width: 2, height: 2 },

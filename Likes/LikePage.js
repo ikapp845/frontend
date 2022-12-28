@@ -1,7 +1,6 @@
 import { View, Modal, StyleSheet, Text, TouchableOpacity } from "react-native";
 import Down from "../Icon/Down";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import { NavigationContainer } from "@react-navigation/native";
 import Friends from "./Friends";
 import Likes from "./Likes";
 
