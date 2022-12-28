@@ -3,10 +3,13 @@ import Down from "../Icon/Down";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import Friends from "./Friends";
 import Likes from "./Likes";
+import LikeOpen from "./LikeOpen";
+import { useState } from "react";
 
 const Tab = createMaterialTopTabNavigator();
 
 export default function LikePage(props) {
+  const [modalvisible, setModalvisible] = useState(false);
   return (
     <Modal
       transparent={true}
@@ -16,6 +19,10 @@ export default function LikePage(props) {
       visible={props.modalvisible}
       animationType="slide"
     >
+      <LikeOpen
+        modalvisible={modalvisible}
+        setModalvisible={setModalvisible}
+      ></LikeOpen>
       <View style={styles.like}>
         <View style={styles.likeinside}>
           <View
@@ -48,7 +55,12 @@ export default function LikePage(props) {
               },
             }}
           >
-            <Tab.Screen name="Me" component={Likes}></Tab.Screen>
+            <Tab.Screen
+              name="Me"
+              component={() => {
+                return <Likes setModalvisible={setModalvisible}></Likes>;
+              }}
+            ></Tab.Screen>
             <Tab.Screen name="Friends" component={Friends}></Tab.Screen>
           </Tab.Navigator>
         </View>

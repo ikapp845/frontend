@@ -9,10 +9,15 @@ import Pinkheart from "../Icon/Pinkheart";
 import Blueheart from "../Icon/Blueheart";
 import Yelloheart from "../Icon/Yellowheart";
 
-export default function Likes() {
+export default function Likes(props) {
   return (
     <ScrollView style={{ backgroundColor: "#ffffff", paddingTop: 15 }}>
-      <TouchableOpacity style={[styles.like, { backgroundColor: "white" }]}>
+      <TouchableOpacity
+        style={[styles.like, { backgroundColor: "white" }]}
+        onPress={() => {
+          props.setModalvisible(true);
+        }}
+      >
         {/* background color:"#f0f0f2" for viewed ones*/}
         <Pinkheart></Pinkheart>
         <Text
