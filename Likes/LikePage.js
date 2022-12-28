@@ -55,12 +55,11 @@ export default function LikePage(props) {
               },
             }}
           >
-            <Tab.Screen
-              name="Me"
-              component={() => {
-                return <Likes setModalvisible={setModalvisible}></Likes>;
-              }}
-            ></Tab.Screen>
+            <Tab.Screen name="Me">
+              {(props) => (
+                <Likes {...props} setModalvisible={setModalvisible} />
+              )}
+            </Tab.Screen>
             <Tab.Screen name="Friends" component={Friends}></Tab.Screen>
           </Tab.Navigator>
         </View>

@@ -31,10 +31,10 @@ export default function LikeOpen(props) {
 
 const styles = StyleSheet.create({
   likeopen: {
+    alignItems: "center",
     width: "100%",
     height: "100%",
-    backgroundcolor: "black",
-    alignItems: "center",
+    backgroundColor: "rgba(0,0,0,0.36)",
   },
   box: {
     backgroundColor: "#b793d6",
