@@ -6,13 +6,14 @@ import {
   TouchableOpacity,
 } from "react-native";
 import BackgroundColour from "../Styles/Background";
-import { useState } from "react";
+import { useContext } from "react";
 import Blueheart from "../Icon/Blueheart";
 import Pinkheart from "../Icon/Pinkheart";
 import Yelllowheart from "../Icon/Yellowheart";
+import { GenderContext } from "../Sections/Entry";
 
 export default function Gender({ navigation }) {
-  const [gender, setGender] = useState("");
+  const [gender, setGender] = useContext(GenderContext);
   return (
     <View style={BackgroundColour.back}>
       <View style={styles.headview}>

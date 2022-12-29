@@ -2,6 +2,9 @@ import { View, StyleSheet, Text, TouchableOpacity, Modal } from "react-native";
 import BackgroundColour from "../Styles/Background";
 import { useState } from "react";
 import DownPopup from "../Components/DownPopup";
+import { useContext } from "react";
+import { GenderContext } from "../Sections/Entry";
+import { UserContext } from "../Sections/Entry";
 
 function takephoto() {}
 
@@ -10,6 +13,8 @@ function choosefromgallery() {}
 export default function Pic() {
   const [state, setState] = useState(false);
   const [modalvisible, setModalvisible] = useState(false);
+  const [username, setUsername] = useContext(UserContext);
+  const [gender, setGender] = useContext(GenderContext);
   return (
     <View style={BackgroundColour.back}>
       <DownPopup

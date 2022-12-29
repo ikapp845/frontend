@@ -17,12 +17,12 @@ export default function First({ navigation }) {
         <Google></Google>
         <Text style={styles.googletext}>Continue with Google</Text>
       </TouchableOpacity>
-      <View>
+      <View style={{ alignItems: "center" }}>
         <Text
           style={{
             textAlign: "center",
             color: "white",
-            width: "90%",
+            width: "85%",
             marginTop: 15,
           }}
         >

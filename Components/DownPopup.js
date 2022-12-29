@@ -1,5 +1,6 @@
 import { View, Modal, Text, StyleSheet, TouchableOpacity } from "react-native";
-import GestureRecognizer from "react-native-swipe-gestures";
+import Instagram from "../Icon/Instagram";
+import Hand from "../Icon/Hand";
 
 export default function DownPopup(props) {
   return (
@@ -20,7 +21,17 @@ export default function DownPopup(props) {
             style={styles.button}
             onPress={obj.function}
           >
-            <Text style={styles.buttontext}>{obj.name}</Text>
+            <Text
+              style={[
+                styles.buttontext,
+                obj.name === "Leave from group" ||
+                obj.name === "Delete my account"
+                  ? { color: "red" }
+                  : { color: "black" },
+              ]}
+            >
+              {obj.name}
+            </Text>
           </TouchableOpacity>
         ))}
       </View>

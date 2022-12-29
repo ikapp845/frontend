@@ -1,9 +1,21 @@
 import { View, Text, StyleSheet, TextInput, Pressable } from "react-native";
 import { useState } from "react";
 import BackgroundColour from "../Styles/Background";
+import { useContext, useEffect } from "react";
+import { UserContext } from "../Sections/Entry";
 
 export default function Username({ navigation }) {
   const [state, setState] = useState(false);
+  const [username, setUsername] = useContext(UserContext);
+
+  useEffect(() => {
+    if (username === "") {
+      setState(false);
+    } else {
+      setState(true);
+    }
+  }, [username]);
+  // var user = "";
   return (
     <View style={BackgroundColour.back}>
       <View style={styles.headview}>
@@ -16,15 +28,18 @@ export default function Username({ navigation }) {
           { marginTop: 68, backgroundColor: "white", paddingLeft: 20 },
         ]}
         placeholderTextColor={"rgba(0,0,0,0.2 )"}
+        value={username}
+        onChangeText={(e) => {
+          setUsername(e);
+          if (username !== "") {
+            setState(true);
+          }
+        }}
       ></TextInput>
       <Pressable
         style={[state ? styles.instyle : styles.outstyle, styles.box]}
-        onPressIn={() => {
-          setState(true);
+        onPress={() => {
           navigation.navigate("Gender");
-        }}
-        onPressOut={() => {
-          setState(false);
         }}
       >
         <View style={styles.signbox}>
